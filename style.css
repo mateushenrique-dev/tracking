@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+}
+
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+/* Menu */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3.75rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li + li {
+  margin-left: 45px;
+}
+
+.menu li:last-child {
+  color: hsl(231, 7%, 65%);
+}
+
+.menu li:last-child::before {
+  content: "•";
+  margin-right: 45px;
+}
+
+/* Main */
+
+.main {
+  display: flex;
+  position: relative;
+}
+
+.text,
+.image {
+  margin-top: 6.25rem;
+}
+
+.image {
+  position: absolute;
+  right: -25rem;
+}
+
+.text span:first-child {
+  font-family: "Barlow Condensed", sans-serif;
+  background-color: hsl(230, 29%, 20%);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 40px;
+  margin-right: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.text span:nth-child(2) {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.125em;
+  color: hsl(231, 7%, 65%);
+  letter-spacing: 0.3rem;
+}
+
+.text h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  color: hsl(230, 29%, 20%);
+  font-size: 2.875rem;
+  max-width: 400px;
+  margin: 30px 0;
+}
+
+.text p {
+  color: hsl(231, 7%, 65%);
+  font-size: 1.125rem;
+  max-width: 300px;
+  margin-bottom: 50px;
+}
+
+.text ul {
+  display: flex;
+  align-items: center;
+}
+
+.text li:first-child {
+  background: hsl(0, 100%, 68%);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.text li:first-child a {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.1rem;
+}
+
+.text li:nth-child(2) {
+  text-transform: uppercase;
+}
+
+.text li:nth-child(2) a {
+  color: hsl(230, 11%, 40%);
+  letter-spacing: 0.1rem;
+}
