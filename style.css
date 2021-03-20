@@ -17,8 +17,13 @@ body {
 
 /* Menu */
 
+.menu li:last-child a {
+  color: hsl(231, 7%, 65%);
+}
+
 .header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 3.75rem;
@@ -30,6 +35,7 @@ body {
 
 .menu {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .menu li + li {
@@ -47,9 +53,19 @@ body {
 
 /* Main */
 
+main {
+  overflow: hidden;
+  height: 100vh;
+}
+
 .main {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
+}
+
+.menu-hamburguer {
+  display: none;
 }
 
 .text,
@@ -99,6 +115,7 @@ body {
 
 .text ul {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -125,4 +142,212 @@ body {
 .text li:nth-child(2) a {
   color: hsl(230, 11%, 40%);
   letter-spacing: 0.1rem;
+}
+
+/* Menu Hamburguer */
+
+#checkbox {
+  opacity: 0;
+}
+
+label.lines {
+  position: relative;
+  cursor: pointer;
+}
+
+.lines span {
+  display: block;
+  height: 2px;
+  width: 30px;
+  background: hsl(230, 29%, 20%);
+  margin-top: 0;
+  transition: 0.3s;
+}
+
+.lines span:nth-child(2) {
+  margin-top: 4px;
+}
+.lines span:nth-child(3) {
+  margin-top: 4px;
+}
+
+label.lines.ativo span:nth-child(1) {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 29px;
+}
+
+label.lines.ativo span:nth-child(2) {
+  opacity: 0;
+}
+
+label.lines.ativo span:nth-child(3) {
+  transform: rotate(45deg);
+}
+
+.menu a {
+  color: hsl(230, 29%, 20%);
+}
+
+.square {
+  position: absolute;
+  z-index: -100;
+  width: 700px;
+  height: 600px;
+  background: hsl(207, 33%, 95%);
+  right: 1px;
+  top: -230px;
+  border-radius: 0 0 0 50px;
+}
+
+.image img {
+  width: 900px;
+}
+
+@media (min-width: 100px) and (max-width: 950px) {
+  body {
+    padding: 10px;
+    margin: 0 0 50px 0;
+  }
+  main {
+    overflow: visible;
+  }
+  .container {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  .menu {
+    display: none;
+    animation: animationMenu 0.3s forwards;
+  }
+  .header-main {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+  }
+
+  .header {
+    margin: 0;
+  }
+  .text,
+  .image {
+    margin-top: 70px;
+  }
+  .menu-hamburguer {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .text ul {
+    flex-wrap: nowrap;
+  }
+
+  .image {
+    position: static;
+    overflow: hidden;
+  }
+
+  .image img {
+    width: 600px;
+    position: relative;
+    left: 0px;
+  }
+
+  .text li:first-child {
+    padding: 10;
+  }
+
+  .text li:first-child a,
+  .text li a {
+    font-size: 14px;
+  }
+
+  .text h1 {
+    max-width: 400px;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns:
+      "imagem"
+      "text";
+  }
+  .menu.ativo li + li {
+    margin: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .menu.ativo {
+    display: grid;
+    background: #fff;
+    justify-content: center;
+    -webkit-box-shadow: -5px 6px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -5px 6px 32px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: -5px 6px 32px -8px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    width: 300px;
+    position: absolute;
+    z-index: 100;
+    top: 130px;
+    padding: 20px;
+  }
+
+  @keyframes animationMenu {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -30px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .menu li:last-child::before {
+    content: "";
+    margin: 0;
+    background: hsl(207, 33%, 95%);
+  }
+
+  .line {
+    width: 300px;
+    height: 100px;
+  }
+
+  .main .text {
+    grid-area: text;
+    margin-top: 400px;
+  }
+
+  .main .image {
+    grid-area: imagem;
+  }
+
+  .square {
+    display: none;
+  }
+
+  .menu li:last-child a:before {
+    content: "";
+    display: block;
+    width: 250px;
+    height: 1px;
+    background: hsl(231, 7%, 65%);
+    margin-bottom: 20px;
+  }
+
+  .menu li:first-child {
+    display: grid;
+    justify-content: center;
+  }
+
+  .text p {
+    margin: 20px 0;
+  }
+
+  .text h1 {
+    margin: 20px 0;
+  }
+
 }
