@@ -13,7 +13,7 @@ Landing page é um desafio do Front End Mentor.
 
 ### Links
 
-- Live Site URL: (https://codepen.io/mateus-henrique-the-decoder/full/dyNbzbE)
+- Live Site URL: (https://landing-page-mateushenrique-dev.netlify.app/)
 
 ### Tecnologias
 
